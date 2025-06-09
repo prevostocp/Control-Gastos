@@ -1,10 +1,23 @@
 import { MyRoutes } from './index'
+import { createContext, useState } from 'react'
+export const ThemeContext = createContext(null);
+import { Light, Dark } from './index'
+import { ThemeProvider } from 'styled-components'
 
 function App() {
 
+  const [theme, setTheme] = useState("light");
+  const themeStyle = theme === "light" ? Light : Dark
+
   return (
     <>
-      <MyRoutes />
+
+      <ThemeContext.Provider value={{ setTheme, theme }} >
+        <ThemeProvider theme={themeStyle}>
+          <MyRoutes />
+        </ThemeProvider>
+      </ThemeContext.Provider>
+
     </>
   )
 }

@@ -1,8 +1,12 @@
 export { default as App } from './App';
+export * from './components/atomos/Icono';
 export * from './components/moleculas/Btnsave';
 export * from './components/templates/HomeTemplate';
 export * from './components/templates/LoginTemplate';
+export * from './index';
 export * from './main';
 export * from './pages/Home';
-export * from './pages/Login';
+export * from './pages/login';
 export * from './routers/routes';
+export * from './styles/themes';
+export * from './styles/variables';
