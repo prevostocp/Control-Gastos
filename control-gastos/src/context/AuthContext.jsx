@@ -3,7 +3,7 @@ import { supabase } from "../index"
 
 const AuthContext = createContext();
 
-export const AuthContextProvider = ({children}) => {
+export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState([]);
     useEffect(() => {
         const { data: authListener } = supabase.auth.onAuthStateChange(
@@ -11,7 +11,8 @@ export const AuthContextProvider = ({children}) => {
                 if (session == null) {
                     setUser(null);
                 } else {
-                    console.log(session);
+                    setUser(session);
+                    console.log("session", session);
                 }
             }
         )
@@ -20,7 +21,7 @@ export const AuthContextProvider = ({children}) => {
         }
     }, []);
     return (
-        <AuthContext.Provider value={{user}} >{children}</AuthContext.Provider>
+        <AuthContext.Provider value={{ user }} >{children}</AuthContext.Provider>
     );
 }
 export const UserAuth = () => {
