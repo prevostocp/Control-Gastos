@@ -7,12 +7,13 @@ export const AuthContextProvider = ({ children }) => {
     const [user, setUser] = useState([]);
     useEffect(() => {
         const { data: authListener } = supabase.auth.onAuthStateChange(
-            async (session) => {
+            async (event, session) => {
                 if (session == null) {
                     setUser(null);
                 } else {
-                    setUser(session);
-                    console.log("session", session);
+                    setUser(session?.user.user_metadata);
+                    console.log("event", event);
+                    console.log("session", session?.user.user_metadata);
                 }
             }
         )
