@@ -1,7 +1,7 @@
 import { MyRoutes } from './index'
 import { createContext, useState } from 'react'
 export const ThemeContext = createContext(null);
-import { Light, Dark, AuthContextProvider } from './index'
+import { Light, Dark, AuthContextProvider, Sidebar } from './index'
 import { ThemeProvider, styled } from 'styled-components'
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <ThemeProvider theme={themeStyle}>
           <AuthContextProvider>
             <Container>
-              
+              <Sidebar />
               <Containerbody >
                 <MyRoutes />
               </Containerbody>
