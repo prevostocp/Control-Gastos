@@ -1,5 +1,6 @@
 import { styled } from "styled-components"
-import { v } from "../../../index"
+import { v, LinksArray } from "../../../index"
+import { NavLink } from "react-router-dom"
 
 export function Sidebar({state, setState}) {
     return (
@@ -10,6 +11,13 @@ export function Sidebar({state, setState}) {
                         <img src={v.logo} />
                     </div>
                 </div>
+                {LinksArray.map(({icon, label, to}) => (
+                       <NavLink to={to}>
+                            <div className="Linkicon">{icon}</div>
+                            <span>{label}</span>
+                       </NavLink>
+                ))}
+                <Divider/>
                 <h2>Costos</h2>
             </Container>
         </Main>        
@@ -22,6 +30,18 @@ const Container = styled.div`
     padding-top: 20px;
     z-index: 100;
     height: 100%;
+    .logocontent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 60px;
+    }
 `;
 const Main = styled.div`
 `;
+const Divider = styled.div`
+    height: 1px;
+    width: 100%;
+    background: ${({theme}) => theme.bg4};
+    margin: ${() => v.lgSpacing} 0;
+`
