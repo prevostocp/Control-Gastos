@@ -20,7 +20,7 @@ function App() {
               </div>
               <div className="ContentMenuambur">
                 <Menuambur />
-              </div>            
+              </div>
               <Containerbody >
                 <MyRoutes />
               </Containerbody>

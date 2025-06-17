@@ -1,7 +1,7 @@
 import { CiPalette } from "react-icons/ci";
 import { BsEmojiLaughing } from "react-icons/bs";
 import { RiDeleteBin2Line, RiEditLine } from "react-icons/ri";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import { RiVipCrownFill } from "react-icons/ri";
 import { BiUserCircle } from "react-icons/bi";
 import { RiSettings3Line } from "react-icons/ri";
@@ -12,7 +12,7 @@ import { TbBrandSupabase } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { BsArrowDown, BsArrowUpShort } from "react-icons/bs";
 import { FaBalanceScale } from "react-icons/fa";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { BsGoogle } from "react-icons/bs";
 import { RiCloseLine } from "react-icons/ri";
 import { BiSave } from "react-icons/bi";
@@ -53,6 +53,7 @@ export const v = {
     -webkit-box-shadow: -2px 14px 20px -4px rgba(0,0,0,0.4);
     -moz-box-shadow: -2px 14px 20px -4px rgba(0,0,0,0.4);`,
   iconoFlechabajo: IoIosArrowDown,
+  iconoFlechaderecha: IoIosArrowDropright,
   iconocorona: RiVipCrownFill,
   iconoUser: BiUserCircle,
   iconoSettings: RiSettings3Line,
