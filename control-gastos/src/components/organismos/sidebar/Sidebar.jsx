@@ -1,5 +1,5 @@
 import { styled } from "styled-components"
-import { v, LinksArray } from "../../../index"
+import { v, LinksArray, SecondarylinksArray, SidebarCard } from "../../../index"
 import { NavLink } from "react-router-dom"
 
 export function Sidebar({ state, setState }) {
@@ -24,6 +24,17 @@ export function Sidebar({ state, setState }) {
                     </div>
                 ))}
                 <Divider />
+                {SecondarylinksArray.map(({ icon, label, to }) => (
+                    <div className={state ? "LinkContainer active" : "LinkContainer"} key={label} >
+                        <NavLink to={to} className={({ isActive }) => `Links${isActive ? ` active` : ``}`}>
+                            <div className="Linkicon">{icon}</div>
+                            {state && <span>{label}</span>}
+                        </NavLink>
+                    </div>
+                ))}
+                <Divider />
+                {state && (<SidebarCard />)}
+                
             </Container>
         </Main>
     );
