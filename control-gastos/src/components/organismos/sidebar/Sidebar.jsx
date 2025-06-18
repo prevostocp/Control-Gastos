@@ -35,6 +35,8 @@ const Container = styled.div`
     padding-top: 20px;
     z-index: 1;
     height: 100%;
+    width: 65px;
+    transition: 0.3s ease-in-out;
     &.active {
         width: 220px;
     }
