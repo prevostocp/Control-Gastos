@@ -34,7 +34,7 @@ export function Sidebar({ state, setState }) {
                 ))}
                 <Divider />
                 {state && (<SidebarCard />)}
-                
+
             </Container>
         </Main>
     );
@@ -48,6 +48,16 @@ const Container = styled.div`
     height: 100%;
     width: 65px;
     transition: 0.3s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 6px;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.colorScroll};
+        border-radius: 10px;
+    }
     &.active {
         width: 220px;
     }
